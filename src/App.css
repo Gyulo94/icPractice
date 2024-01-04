@@ -1,38 +1,139 @@
-.App {
+@font-face {
+  font-family: Helvetica;
+  font-weight: normal;
+  src: url("./font/Helvetica Extended.ttf") format("truetype");
+}
+
+html,
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #0a0a0a;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #0a0a0a;
+  margin: 0;
+  padding: 0;
+}
+
+.cubeSwiper {
+  margin-top: 8%;
+  width: 600px;
+  height: 600px;
+}
+
+.swiper-slide {
   text-align: center;
+  font-size: 18px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.cubeSwiperText {
+  width: 1300px;
+  height: auto;
+  margin-top: -3%;
+  margin: 0 auto;
+}
+
+/* .verticalText {
+  margin: 0 auto;
+  width: 1000px;
+  height: 300px;
+  color: #fff;
+} */
+
+.horizontalSwiper {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.verticalSwiper {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.title {
+  position: absolute;
+  font-size: 16px;
+  color: #fff;
+  left: 49%;
+  z-index: 2;
+}
+
+.copyright {
+  position: absolute;
+  font-size: 20px;
+  color: #fff;
+  left: 44.5%;
+  bottom: 2%;
+  z-index: 1;
+}
+
+@media (max-width: 2160px) {
+  .cubeSwiper {
+    margin-top: 10%;
+    width: 400px;
+    height: 400px;
+  }
+
+  .cubeSwiperText {
+    margin-top: -2%;
+    width: 866px;
+    height: auto;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 1024px) {
+  .cubeSwiper {
+    width: 300px;
+    height: 300px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .cubeSwiperText {
+    width: 650px;
+    height: auto;
+  }
+
+  .title {
+    left: 47.5%;
+    font-size: 12px;
+  }
+
+  .copyright {
+    left: 40%;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cubeSwiper {
+    margin-top: 15%;
+    width: 250px;
+    height: 250px;
+  }
+
+  .cubeSwiperText {
+    margin-top: -4%;
+    width: 541px;
+    height: auto;
+  }
+
+  .title {
+    left: 46.5%;
+    font-size: 10px;
+  }
+
+  .copyright {
+    left: 38%;
+    font-size: 14px;
   }
 }
