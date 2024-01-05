@@ -202,7 +202,7 @@ export default function App() {
           <Footer />
         </SwiperSlide>
       </Swiper>
-      <p className="copyright">@ IC Corp. All rights reserved.</p>
+      <p className="copyright">ⓒ IC Corp. All rights reserved.</p>
     </>
   );
 }

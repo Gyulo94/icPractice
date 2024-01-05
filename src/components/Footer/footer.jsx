@@ -28,7 +28,7 @@ export default function Footer() {
           <div>
             <span className="email">rjsdanceno1@naver.com</span>
           </div>
-          <div>@ IC Corp. All rights reserved</div>
+          <div>ⓒ IC Corp. All rights reserved</div>
         </div>
         <div className="right">
           <div>EVERYDAY ON IC SHOW YOUR SELF</div>
