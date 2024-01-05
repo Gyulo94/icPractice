@@ -1,4 +1,6 @@
 import React, { useEffect, useRef } from "react";
+import Footer from "./components/Footer/footer";
+import title from "./assets/title.png";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -75,54 +77,23 @@ export default function App() {
     };
   }, [cubeSwiperRef, horizontalSwiperRef, verticalSwiperRef]);
 
-  // 자동재생 이벤트 관련
-  useEffect(() => {
-    const cubeSwiper = cubeSwiperRef.current.swiper;
+  const firstPage = () => {
     const horizontalSwiper = horizontalSwiperRef.current.swiper;
     const verticalSwiper = verticalSwiperRef.current.swiper;
-
-    const beforeCubeSwiper = () => {
-      horizontalSwiper.autoplay.stop();
-      verticalSwiper.autoplay.stop();
-    };
-
-    const afterCubeSwiper = () => {
-      horizontalSwiper.autoplay.start();
-      verticalSwiper.autoplay.stop();
-    };
-
-    const beforeVerticalSwiper = () => {
-      horizontalSwiper.autoplay.stop();
-      verticalSwiper.autoplay.start();
-    };
-
-    cubeSwiper.on("slideChangeTransitionStart", beforeCubeSwiper);
-    cubeSwiper.on("slideChangeTransitionEnd", afterCubeSwiper);
-    verticalSwiper.on("slideChangeTransitionStart", beforeVerticalSwiper);
-    verticalSwiper.on("slideChangeTransitionEnd", afterCubeSwiper);
-
-    return () => {
-      cubeSwiper.off("slideChangeTransitionStart", beforeCubeSwiper);
-      cubeSwiper.off("slideChangeTransitionEnd", afterCubeSwiper);
-      verticalSwiper.off("slideChangeTransitionStart", beforeVerticalSwiper);
-      verticalSwiper.off("slideChangeTransitionEnd", afterCubeSwiper);
-    };
-  }, [horizontalSwiperRef, cubeSwiperRef, verticalSwiperRef]);
+    horizontalSwiper.slideTo(-1, 1000, false);
+    verticalSwiper.slideTo(-1, 1000, false);
+  };
 
   return (
     <>
-      <p className="title">I CULTURE</p>
+      {/* <p className="title">I CULTURE</p> */}
+      <a className="title" onClick={firstPage}>
+        <img src={title} alt="" />
+      </a>
       <Swiper
         className="horizontalSwiper"
-        direction="horizontal"
         mousewheel={true}
-        grabCursor={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: true,
-          stopOnLastSlide: true,
-        }}
-        modules={[Mousewheel, Autoplay]}
+        modules={[Mousewheel]}
         ref={horizontalSwiperRef}
       >
         <SwiperSlide>
@@ -137,40 +108,37 @@ export default function App() {
             }}
             autoplay={{
               delay: 2500,
-              disableOnInteraction: true,
-              waitForTransition: true,
-              stopOnLastSlide: true,
+              disableOnInteraction: false,
             }}
-            loop={false}
+            loop={true}
             mousewheel={true}
             modules={[EffectCube, Mousewheel, Controller, Autoplay]}
             ref={cubeSwiperRef}
             className="cubeSwiper"
           >
             <SwiperSlide>
-              <img src="img/everydayOnIc.jpeg" alt="" />
+              <img id="cube" src="img/everydayOnIc.png" alt="" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src="img/showYourself.jpeg" alt="" />
+              <img src="img/showYourself.png" alt="" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src="img/youAreTheNextStar.jpeg" alt="" />
+              <img src="img/youAreTheNextStar.png" alt="" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src="img/onTheStage.jpeg" alt="" />
+              <img src="img/onTheStage.png" alt="" />
             </SwiperSlide>
           </Swiper>
 
           <Swiper
             effect={"cube"}
-            grabCursor={true}
             cubeEffect={{
               shadow: false,
               slideShadows: false,
               // shadowOffset: 30,
               // shadowScale: 1.10,
             }}
-            loop={false}
+            loop={true}
             mousewheel={true}
             modules={[EffectCube, Mousewheel, Controller]}
             ref={cubeSwiperTextRef}
@@ -192,22 +160,25 @@ export default function App() {
         </SwiperSlide>
 
         <SwiperSlide>
+          <img
+            className="itsYourTurnText"
+            src="img/itsYourTurnText.png"
+            alt=""
+          />
           <img src="img/itsYourTurn.png" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="img/iCulture.png" alt="" />
+          <p className="iCulture">I Culture</p>
         </SwiperSlide>
         <SwiperSlide>
           <Swiper
             className="verticalSwiper"
             effect={"fade"}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-              stopOnLastSlide: true,
-              waitForTransition: true,
-            }}
             speed={150}
+            // autoplay={{
+            //   delay: 2500,
+            //   disableOnInteraction: false,
+            // }}
             mousewheel={true}
             direction="vertical"
             modules={[Mousewheel, EffectFade, Autoplay]}
@@ -228,7 +199,7 @@ export default function App() {
           </Swiper>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="img/footer.png" alt="" />
+          <Footer />
         </SwiperSlide>
       </Swiper>
       <p className="copyright">@ IC Corp. All rights reserved.</p>

@@ -3,6 +3,16 @@
   font-weight: normal;
   src: url("./font/Helvetica Extended.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Helvetica53-Extended";
+  font-weight: 700;
+  src: url("./font/HelveticaExt.ttf") format("tft");
+}
+@font-face {
+  font-family: "Helvetica-UltraCompressed";
+  font-weight: 700;
+  src: url("./font/Helvetica Ultra Compressed.otf") format("otf");
+}
 
 html,
 body {
@@ -18,9 +28,10 @@ body {
 }
 
 .cubeSwiper {
-  margin-top: 8%;
-  width: 600px;
-  height: 600px;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  margin-top: 13%;
 }
 
 .swiper-slide {
@@ -36,18 +47,30 @@ body {
 }
 
 .cubeSwiperText {
-  width: 1300px;
+  width: 900px;
   height: auto;
-  margin-top: -3%;
   margin: 0 auto;
+  margin-top: -4%;
 }
 
-/* .verticalText {
-  margin: 0 auto;
-  width: 1000px;
-  height: 300px;
+.itsYourTurnText {
+  position: absolute;
+  width: 677px !important;
+  height: auto !important;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.iCulture {
+  position: absolute;
   color: #fff;
-} */
+  margin: 0 auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+}
 
 .horizontalSwiper {
   margin: 0;
@@ -56,16 +79,19 @@ body {
 }
 
 .verticalSwiper {
-  margin: 0;
+  margin: 0 auto;
   height: 100vh;
   width: 100vw;
 }
 
-.title {
+.title img {
   position: absolute;
-  font-size: 16px;
-  color: #fff;
-  left: 49%;
+  width: 50px;
+  height: auto;
+  top: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
   z-index: 2;
 }
 
@@ -73,22 +99,32 @@ body {
   position: absolute;
   font-size: 20px;
   color: #fff;
-  left: 44.5%;
-  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -1%;
   z-index: 1;
 }
 
-@media (max-width: 2160px) {
+@media (max-width: 1440px) {
   .cubeSwiper {
-    margin-top: 10%;
-    width: 400px;
-    height: 400px;
+    margin-top: 15%;
+    width: 250px;
+    height: 250px;
   }
 
   .cubeSwiperText {
-    margin-top: -2%;
-    width: 866px;
+    margin-top: -3%;
+    width: 541px;
     height: auto;
+  }
+
+  .title img {
+    width: 45px;
+    height: auto;
+  }
+
+  .copyright {
+    font-size: 18px;
   }
 }
 
@@ -101,15 +137,14 @@ body {
   .cubeSwiperText {
     width: 650px;
     height: auto;
+    margin-top: -5%;
   }
 
-  .title {
-    left: 47.5%;
-    font-size: 12px;
+  .title img {
+    width: 45px;
   }
 
   .copyright {
-    left: 40%;
     font-size: 16px;
   }
 }
@@ -127,13 +162,66 @@ body {
     height: auto;
   }
 
-  .title {
-    left: 46.5%;
-    font-size: 10px;
+  .itsYourTurnText {
+    width: 500px !important;
+  }
+
+  .title img {
+    width: 40px;
   }
 
   .copyright {
-    left: 38%;
     font-size: 14px;
+  }
+}
+
+@media (max-width: 450px) {
+  body {
+    overflow: hidden;
+  }
+
+  .cubeSwiper {
+    margin-top: 70%;
+    width: 180px;
+    height: 180px;
+  }
+
+  .cubeSwiperText {
+    width: 390px;
+    height: auto;
+    margin-top: -7%;
+  }
+
+  .itsYourTurnText {
+    width: 300px !important;
+    height: auto !important;
+  }
+
+  .title img {
+    width: 40px;
+  }
+
+  .verticalSwiper {
+    margin: 0 auto;
+    margin-top: 35%;
+    width: 100%;
+    height: 55%;
+  }
+}
+
+@media (max-width: 380px) {
+  .cubeSwiper {
+    width: 150px;
+    height: 150px;
+  }
+
+  .cubeSwiperText {
+    width: 337.5px;
+    height: auto;
+    margin-top: -7%;
+  }
+
+  .iCulture {
+    font-size: 49px;
   }
 }

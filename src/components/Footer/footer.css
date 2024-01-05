@@ -1,0 +1,167 @@
+body {
+  width: 100%;
+  height: 100%;
+}
+section {
+  width: 60%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+header {
+  height: 36.5%;
+}
+
+.imgWrapper {
+  margin: 0 auto;
+  height: auto;
+  /* background-color: blue; */
+}
+.imgWrapper .helloIc {
+  margin: 0 auto;
+  max-width: 446px;
+  height: auto;
+}
+.imgWrapper .beTheNextStar {
+  margin: 1% auto;
+  max-width: 190px;
+  height: auto;
+}
+.imgWrapper .iconStar {
+  margin: 0 auto;
+  max-width: 24px;
+  height: auto;
+}
+
+.divide {
+  /* background-color: aqua; */
+  height: 12%;
+  border-bottom: 1px solid #fff;
+}
+
+.footer {
+  /* background-color: blueviolet; */
+  height: auto;
+  display: flex;
+}
+
+.footer .left {
+  /* background-color: aqua; */
+  color: #717171;
+  margin-top: 1%;
+  width: 40%;
+  font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+  column-gap: 10%;
+}
+
+.footer .left div .company {
+  font-weight: 700;
+  color: #fff;
+}
+
+.footer .left div .ceo {
+  font-weight: 700;
+}
+
+.footer .left div .email {
+  margin-left: 13%;
+}
+
+.footer .right {
+  /* background-color: blue; */
+  color: #fff;
+  margin-top: 1%;
+  width: 60%;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: right;
+  line-height: 1.8;
+}
+
+@media (max-width: 1440px) {
+  header {
+    height: 28%;
+  }
+
+  .footer .left {
+    font-size: 12px;
+  }
+  .footer .right {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1024px) {
+  header {
+    height: 28%;
+  }
+
+  .footer .left {
+    font-size: 8px;
+  }
+  .footer .right {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 23%;
+  }
+
+  .divide {
+    height: 5%;
+  }
+
+  .footer {
+    flex-direction: column-reverse;
+  }
+
+  .footer .left {
+    margin-top: 2%;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    font-size: 16px;
+    line-height: 2;
+  }
+
+  .footer .left div .email {
+    margin: 0;
+  }
+  .footer .right {
+    margin-top: 3%;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    line-height: 2;
+  }
+}
+
+@media (max-width: 450px) {
+  header {
+    height: 20%;
+  }
+  .footer .left {
+    margin-top: 6%;
+    font-size: 13px;
+  }
+
+  .footer .right {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 380px) {
+  .footer .left {
+    margin-top: 6%;
+    font-size: 11px;
+  }
+
+  .footer .right {
+    font-size: 11px;
+  }
+}
