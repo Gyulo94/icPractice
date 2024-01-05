@@ -66,6 +66,7 @@ body {
   position: absolute;
   color: #fff;
   margin: 0 auto;
+  white-space: nowrap;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -223,5 +224,8 @@ body {
 
   .iCulture {
     font-size: 49px;
+  }
+  .copyright {
+    white-space: nowrap;
   }
 }
