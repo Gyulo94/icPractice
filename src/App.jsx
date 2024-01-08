@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Footer from "./components/Footer/footer";
-import title from "./assets/title.png";
+import { cubeImg, cubeTextImg, verticalImg } from "./data";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -77,7 +77,7 @@ export default function App() {
     };
   }, [cubeSwiperRef, horizontalSwiperRef, verticalSwiperRef]);
 
-  const firstPage = () => {
+  const goToFirstPage = () => {
     const horizontalSwiper = horizontalSwiperRef.current.swiper;
     const verticalSwiper = verticalSwiperRef.current.swiper;
     horizontalSwiper.slideTo(-1, 1000, false);
@@ -87,12 +87,11 @@ export default function App() {
   return (
     <>
       {/* <p className="title">I CULTURE</p> */}
-      <a className="title" onClick={firstPage}>
-        <img src={title} alt="" />
+      <a className="title" onClick={goToFirstPage}>
+        <img src="./assets/title.png" alt="" />
       </a>
       <Swiper
         className="horizontalSwiper"
-        direction={"vertical"}
         mousewheel={true}
         modules={[Mousewheel]}
         ref={horizontalSwiperRef}
@@ -117,18 +116,13 @@ export default function App() {
             ref={cubeSwiperRef}
             className="cubeSwiper"
           >
-            <SwiperSlide>
-              <img id="cube" src="img/everydayOnIc.png" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="img/showYourself.png" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="img/youAreTheNextStar.png" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="img/onTheStage.png" alt="" />
-            </SwiperSlide>
+            {cubeImg.map((cubeImg) => {
+              return (
+                <SwiperSlide key={cubeImg.id}>
+                  <img src={cubeImg.src} alt="" />
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
 
           <Swiper
@@ -145,28 +139,23 @@ export default function App() {
             ref={cubeSwiperTextRef}
             className="cubeSwiperText"
           >
-            <SwiperSlide>
-              <img src="img/everydayOnIcText.png" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="img/showYourselfText.png" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="img/youAreTheNextStarText.png" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="img/onTheStageText.png" alt="" />
-            </SwiperSlide>
+            {cubeTextImg.map((cubeTextImg) => {
+              return (
+                <SwiperSlide key={cubeTextImg.id}>
+                  <img src={cubeTextImg.src} alt="" />
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
         </SwiperSlide>
 
         <SwiperSlide>
           <img
             className="itsYourTurnText"
-            src="img/itsYourTurnText.png"
+            src="./assets/itsYourTurnText.png"
             alt=""
           />
-          <img src="img/itsYourTurn.png" alt="" />
+          <img src="./assets/itsYourTurn.png" alt="" />
         </SwiperSlide>
         <SwiperSlide>
           <p className="iCulture">I Culture</p>
@@ -185,18 +174,14 @@ export default function App() {
             modules={[Mousewheel, EffectFade, Autoplay]}
             ref={verticalSwiperRef}
           >
-            <SwiperSlide>
-              <img src="img/Group 18.png" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="img/Group 19.png" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="img/Group 20.png" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="img/Group 21.png" alt="" />
-            </SwiperSlide>
+            {" "}
+            {verticalImg.map((verticalImg) => {
+              return (
+                <SwiperSlide key={verticalImg.id}>
+                  <img src={verticalImg.src} alt="" />
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
         </SwiperSlide>
         <SwiperSlide>

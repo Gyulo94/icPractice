@@ -1,17 +1,14 @@
 import React from "react";
 import "./footer.css";
-import helloIc from "../../assets/helloIc.png";
-import beTheNextStar from "../../assets/beTheNextStar.png";
-import iconStar from "../../assets/iconStar.png";
 
 export default function Footer() {
   return (
     <section>
       <header />
       <div className="imgWrapper">
-        <img className="helloIc" src={helloIc} alt="" />
-        <img className="beTheNextStar" src={beTheNextStar} alt="" />
-        <img className="iconStar" src={iconStar} alt="" />
+        <img className="helloIc" src="assets/helloIc.png" alt="" />
+        <img className="beTheNextStar" src="assets/beTheNextStar.png" alt="" />
+        <img className="iconStar" src="assets/iconStar.png" alt="" />
       </div>
 
       <div className="divide" />
