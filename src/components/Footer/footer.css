@@ -10,6 +10,7 @@ section {
 
 header {
   height: 36.5%;
+  white-space: nowrap;
 }
 
 .imgWrapper {
@@ -143,25 +144,26 @@ header {
 
 @media (max-width: 450px) {
   header {
-    height: 20%;
+    height: 15%;
+  }
+  section {
+    width: 90%;
   }
   .footer .left {
     margin-top: 6%;
-    font-size: 13px;
+    font-size: 15px;
   }
 
   .footer .right {
-    font-size: 13px;
+    font-size: 15px;
   }
 }
 
 @media (max-width: 380px) {
   .footer .left {
     margin-top: 6%;
-    font-size: 11px;
   }
 
   .footer .right {
-    font-size: 11px;
   }
 }

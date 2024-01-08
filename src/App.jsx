@@ -92,6 +92,7 @@ export default function App() {
       </a>
       <Swiper
         className="horizontalSwiper"
+        direction={"vertical"}
         mousewheel={true}
         modules={[Mousewheel]}
         ref={horizontalSwiperRef}
